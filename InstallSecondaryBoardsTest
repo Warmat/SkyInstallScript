@@ -1,22 +1,5 @@
 #!/bin/bash
  
-#######################################################################################################################################################################
-##### SKYMINER (SKYCOIN) ORANGE PI AUTO INSTALL SCRIPT
-##### !!! USE THIS ONLY FOR ORANGE PI NUMBER 1 !!!
-##### This script automatically installs the full Skycoin and Skywire software including all dependencies with one push of a button on a OrangePI board.
-##### To run this script enter "sh SkyInstallScript" into a terminal and hit enter! You need get a root shell first with "sudo -s" and enter your password.
-##### For more detailed instructions please consult the included tutorial.
-#######################################################################################################################################################################
-##### Authors:      Tobias Herrmann
-##### Licence:      GNU General Public License v3.0
-##### Donations:
-#######################################################################################################################################################################
- 
- 
- 
- 
-#####################################################################   !!!!! SCRIPT TO MAKE BOARD IP STATIC GOES HERE !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ###
- 
  
 ##### START SYSTEM CLEANUP (Remove unnecessary apps/bloatware)
 echo "Performimg system cleanup right now..."
