@@ -20,4 +20,4 @@ cd $GOPATH/bin
 ./manager -web-dir ${GOPATH}/src/github.com/skycoin/skywire/static/skywire-manager > /dev/null 2>&1 &
 
 ##### This starts the Node on your secondary board and shows it in the Manager of the Master/Primary board (OrangePI 1)
-./node -connect-manager -manager-address 192.168.0.114:5998 -manager-web 192.168.0.101:8000  -address :5000 -web-port :6001 > /dev/null 2>&1 &
+./node -connect-manager -manager-address 192.168.0.101:5998 -manager-web 192.168.0.101:8000  -address :5000 -web-port :6001 > /dev/null 2>&1 &
