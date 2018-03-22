@@ -32,8 +32,7 @@
  
 ##### ASK ROOT PASSWORD FOR ORANGEPI BOARDS (must be identical on all board to autoinstall board 2-8 using ssh)
 echo "In order to install the OrangePI boards 2-8 automatically, we need to login via SSH to run the install routine. Please make sure the root password is the same on all boards!"
-echo -n Please enter root password now: 
-read -s RootPassword
+read -sp 'Enter Your root password here: ' RootPassword
 ##### This must be there so terminal creates a new line after password entry!!!
 echo
 
@@ -188,22 +187,22 @@ ssh-keyscan -H 192.168.0.107 >> ~/.ssh/known_hosts
 ssh-keyscan -H 192.168.0.108 >> ~/.ssh/known_hosts
 
 ###### Connect to OrangePI 2 and run installation
-sshpass -p RootPassword ssh root@192.168.0.102 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
+sshpass -p $RootPassword ssh root@192.168.0.102 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
 ###### Connect to OrangePI 3 and run installation
-sshpass -p RootPassword ssh root@192.168.0.103 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
+sshpass -p $RootPassword ssh root@192.168.0.103 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
 ###### Connect to OrangePI 4 and run installation
-sshpass -p RootPassword ssh root@192.168.0.104 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
+sshpass -p $RootPassword ssh root@192.168.0.104 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
 ###### Connect to OrangePI 5 and run installation
-sshpass -p RootPassword ssh root@192.168.0.105 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
+sshpass -p $RootPassword ssh root@192.168.0.105 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
 ###### Connect to OrangePI 6 and run installation
-sshpass -p RootPassword ssh root@192.168.0.106 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
+sshpass -p $RootPassword ssh root@192.168.0.106 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
 ###### Connect to OrangePI 7 and run installation
-sshpass -p RootPassword ssh root@192.168.0.107 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
+sshpass -p $RootPassword ssh root@192.168.0.107 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
 ###### Connect to OrangePI 8 and run installation
-sshpass -p RootPassword ssh root@192.168.0.108 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
+sshpass -p $RootPassword ssh root@192.168.0.108 'bash -s' < ~/SkyInstallScriptSecondary.sh && exit
 
 ###### Clear root password variable
-unset RootPassword
+unset $RootPassword
 
 ##### SUCCESSFUL INSTALLATION NOTIFICATION
 echo "Congratulation your Skyminer is now fully installed!"
