@@ -216,11 +216,10 @@ is_alive_ping()
                                         elif [ $InstallLater = n ]
                                         then ping -q -c2 $i > /dev/null
                                                 if [ $? -ne 0 ]; then
-                                                        echo "The board $i is still not reachable you will have to install skywire later on this board. continuing with$
-                                                else
+                                                        echo "The board $i is still not reachable you will have to install skywire later on this board. continuing with the installation process"
+                                                        else
                                                 echo "OrangePI with IP: $i is finally up.Continuing with the installation process"
                                                 fi
-
                                         fi
                                 else
                                  echo "OrangePI with IP: $i is now up"
