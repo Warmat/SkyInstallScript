@@ -184,8 +184,9 @@ sudo update-rc.d ServiceStartSkywirePrimary.sh defaults
 echo "Installation finished on OrangePI 1 (Master Board)."
 echo "Now automatically installing OrangePI 2-8 using SSH"
 echo "Please make sure that all OrangePIs are powered on!!!"
-#!/bin/bash
+sleep 10
 ####### Start ping sequence and echo results
+echo "We are now going to check if all the boards are up and reachable"
 is_alive_ping()
 {
   ping -q -c2  $1 > /dev/null
