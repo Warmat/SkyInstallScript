@@ -184,6 +184,54 @@ sudo update-rc.d ServiceStartSkywirePrimary.sh defaults
 echo "Installation finished on OrangePI 1 (Master Board)."
 echo "Now automatically installing OrangePI 2-8 using SSH"
 echo "Please make sure that all OrangePIs are powered on!!!"
+#!/bin/bash
+####### Start ping sequence and echo results
+is_alive_ping()
+{
+  ping -q -c2  $1 > /dev/null
+  if [ $? -eq 0 ]; then
+        echo "OrangePI with IP: $i is up."
+  else
+        echo "We detected that at least one OrangePI is down:"
+        echo "OrangePI with IP: $i is DOWN (Please start or reboot!)."
+        read -p "Do you want to install Skywire on board $i (y/n)?" Continue
+
+                while [ $Continue != n ] && [ $Continue != y ];
+                do echo 'please answer by y or n'
+                read -p "Do you want to install Skywire on board $i y/n? If y please make sure it is plugged in" Continue
+                done
+
+                if [ $Continue = y ]; then
+                        echo "Continuing the installation proccess......"
+                        ping -q -c2 $i > /dev/null
+                                if [ $? -ne 0 ]; then
+                                echo "the board $i is still not reachable you can choose not to install on this board for now"
+                                read -p "Do you want to install skywire on $i at a later time (y/n)?"  InstallLater
+                                        while [ $InstallLater != n ] && [ $InstallLater != y ];
+                                        do echo 'please answer by y or n'
+                                        read -p "Do you want to install skywire on $i at a later time (y/n)?"  InstallLater
+                                        done
+
+                                        if [ $InstallLater = y ]; then echo "continuing with the installation process"
+                                        elif [ $InstallLater = n ]
+                                        then ping -q -c2 $i > /dev/null
+                                                if [ $? -ne 0 ]; then
+                                                        echo "The board $i is still not reachable you will have to install skywire later on this board. continuing with$
+                                                else
+                                                echo "OrangePI with IP: $i is finally up.Continuing with the installation process"
+                                                fi
+
+                                        fi
+                                else
+                                 echo "OrangePI with IP: $i is now up"
+                                fi
+
+                elif [ $Continue = n ]; then
+                        echo "You are not going to install Skywire on board $i. Continuing the installation proces"
+                fi
+  fi
+}
+for i in 192.168.0.{112..118}; do is_alive_ping $i; done
 
 ###### Install sshpass in order to login to OrangePI boards 2-8 using ssh
 sudo apt-get install sshpass
