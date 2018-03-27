@@ -32,7 +32,20 @@
  
 ##### ASK ROOT PASSWORD FOR ORANGEPI BOARDS (must be identical on all board to autoinstall board 2-8 using ssh)
 echo "In order to install the OrangePI boards 2-8 automatically, we need to login via SSH to run the install routine. Please make sure the root password is the same on all boards!"
-read -p 'Enter Your root password here: ' RootPassword
+# read password twice
+read -sp "Please enter root password: " RootPassword
+echo
+read -sp "Please enter root password (again): " RootPassword2
+
+# check if passwords match and if not ask again
+while [ "$RootPassword" != "$RootPassword2" ];
+do
+    echo 
+    echo "Passwords do not match! Please try again."
+    read -sp "Password: " RootPassword
+    echo
+    read -sp "Password (again): " RootPassword2
+done
 ##### This must be there so terminal creates a new line after password entry!!!
 echo
 
