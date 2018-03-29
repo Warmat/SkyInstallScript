@@ -170,12 +170,12 @@ wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/Serv
 wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/ServiceStopSkywire.sh
 
 ###### Move script to init.d directory 
-sudo mv ServiceStartSkycoinWallet.sh /etc/init.d/
-sudo mv ServiceStartSkywirePrimary.sh /etc/init.d/
+#sudo mv ServiceStartSkycoinWallet.sh /etc/init.d/
+#sudo mv ServiceStartSkywirePrimary.sh /etc/init.d/
 
 ###### Invoke update-rc.d
-sudo update-rc.d ServiceStartSkycoinWallet.sh defaults
-sudo update-rc.d ServiceStartSkywirePrimary.sh defaults
+#sudo update-rc.d ServiceStartSkycoinWallet.sh defaults
+#sudo update-rc.d ServiceStartSkywirePrimary.sh defaults
 
 
 
