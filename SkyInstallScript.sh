@@ -140,7 +140,6 @@ cd $GOPATH/src/github.com/skycoin/skywire/cmd
 go install ./...
 echo "Skywire succesfully installed!"
 
-
 ##### Now Lauching Skywire
 echo "Now lauching Skywire"
 cd $GOPATH/bin
@@ -148,8 +147,6 @@ cd $GOPATH/bin
 echo "Skywire is now running in the background. You can now access the Skywire Manager via the web browser" 
 sleep 5
  
-
-
 ##### START SKYWIRE MONITOR
 ###### Change into installation path
 cd $GOPATH/bin
@@ -241,6 +238,7 @@ echo "Please make sure that all OrangePIs are powered on!!!"
 cd ~
 ###### Install sshpass in order to login to OrangePI boards 2-8 using ssh
 sudo apt-get install sshpass
+echo"SSHpass installed"
 
 ###### Scan and add keys to trusted list
 ssh-keyscan -H 192.168.0.102 >> ~/.ssh/known_hosts
