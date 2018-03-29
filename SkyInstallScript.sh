@@ -237,7 +237,7 @@ for i in 192.168.0.{102..108}; do is_alive_ping $i; done
 ###### Download install script for secondary boards (OrangePI's 2-8)
 echo "Installation finished on OrangePI 1 (Master Board)."
 echo "Now automatically installing OrangePI 2-8 using SSH"
-echo "Please make sure that all OrangePIs are powered on!!!
+echo "Please make sure that all OrangePIs are powered on!!!"
 cd ~
 ###### Install sshpass in order to login to OrangePI boards 2-8 using ssh
 sudo apt-get install sshpass
