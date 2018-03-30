@@ -238,7 +238,7 @@ echo "Please make sure that all OrangePIs are powered on!!!"
 cd ~
 ###### Install sshpass in order to login to OrangePI boards 2-8 using ssh
 sudo apt-get install sshpass
-echo"SSHpass installed"
+echo "SSHpass installed"
 
 ###### Scan and add keys to trusted list
 ssh-keyscan -H 192.168.0.102 >> ~/.ssh/known_hosts
