@@ -161,7 +161,7 @@ Is the information correct: Y + <Enter>
 | OrangePI 7 | 192.168.0.107|
 | OrangePI 8 | 192.168.0.108|
 
-Now let us change the IP of the board according to the list above. For this example we use OrangePI 1. 
+Now let us change the IP of the boards according to the list above. For this example we use OrangePI 1. 
 
 In the terminal type and press enter afterwards: 
 
@@ -183,7 +183,7 @@ iface eth0 inet static 	    delete dhcp and type static
 address 192.168.0.101 	     remove # at the beginning and type IP from the table above (ex:192.168.0.101)
 netmask 255.255.255.0	      remove # at the beginning
 gateway 192.168.0.1 	       remove # at the beginning
-dns-nameservers 192.168.0.1	remove # and replace 8.8.8.8  8.8.4.4 with 192.168.0.1
+dns-nameservers 192.168.0.1	remove # and replace '8.8.8.8  8.8.4.4' with 192.168.0.1
 ```
 
 Now your screen should look like this:
@@ -192,7 +192,7 @@ Now your screen should look like this:
 The changes must be saved to be put into effect. We do this by pressing Ctrl+x, then type Y and press enter. After that the window automatically closes. Now you are back in the terminal and we must reboot. To do so copy paste the following into your terminal:
 
 ```
-sudo reboot now
+reboot now
 ```
 
 The preconfiguration of the OrangePI 1 is finished at this point.
@@ -223,10 +223,12 @@ Let’s get started:
 cd && wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/SkyInstallScript.sh
 ```
 
-Alright lets do some magic. Run the script! In the terminal shell type or copy paste the following command:
+Alright lets do some magic. Run the script! In the terminal shell type or copy paste the following commands:
 
 ```
-sh ~/SkyInstallScript.sh
+chmod 755 SkyInstallScript.sh  ---> press enter
+./SkyInstallScript.sh
+
 ```
 
 2.	You will be asked for the root password you used for all boards. This is needed to automatically login to the OrangePI boards 2-8 and also install the software there automatically. Everyting is now done automatically you just need to wait a couple of minutes. You will be informed as soon the installation is finished.
