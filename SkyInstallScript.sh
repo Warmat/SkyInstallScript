@@ -144,7 +144,7 @@ echo "Now lauching Skywire"
 cd $GOPATH/bin
 ./manager -web-dir ${GOPATH}/src/github.com/skycoin/skywire/static/skywire-manager > /dev/null 2>&1 &
 echo "Skywire is now running in the background. You can now access the Skywire Manager via the web browser" 
-sleep 10
+sleep 15
  
 ##### START SKYWIRE MONITOR
 ###### Change into installation path
