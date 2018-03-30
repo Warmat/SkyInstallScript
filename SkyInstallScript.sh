@@ -239,7 +239,9 @@ cd ~
 ###### Install sshpass in order to login to OrangePI boards 2-8 using ssh
 sudo apt-get install sshpass
 echo "SSHpass installed"
-
+##### Create the hidden file where the trusted list of keys will be held####
+sudo mkdir ~/.ssh/
+sudo touch ~/.ssh/known_hosts
 ###### Scan and add keys to trusted list
 ssh-keyscan -H 192.168.0.102 >> ~/.ssh/known_hosts
 ssh-keyscan -H 192.168.0.103 >> ~/.ssh/known_hosts
