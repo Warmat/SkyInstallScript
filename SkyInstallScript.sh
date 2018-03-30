@@ -82,7 +82,7 @@ sudo mv go /usr/local
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
 
 ###### Reload the paths
-source ~/.profile
+. ~/.profile
 
 ###### Create GO directories
 mkdir -p $HOME/go
@@ -107,7 +107,7 @@ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
 ###### Reload GO paths
-source ~/.bashrc
+. ~/.bashrc
 echo "GO succesfully installed!"
  
 
@@ -144,7 +144,7 @@ echo "Now lauching Skywire"
 cd $GOPATH/bin
 ./manager -web-dir ${GOPATH}/src/github.com/skycoin/skywire/static/skywire-manager > /dev/null 2>&1 &
 echo "Skywire is now running in the background. You can now access the Skywire Manager via the web browser" 
-sleep 5
+sleep 10
  
 ##### START SKYWIRE MONITOR
 ###### Change into installation path
@@ -180,7 +180,7 @@ wget https://raw.githubusercontent.com/TheSKYpeople/SkyInstallScript/master/Serv
 echo "Installation finished on OrangePI 1 (Master Board)."
 echo "Now automatically installing OrangePI 2-8 using SSH"
 echo "Please make sure that all OrangePIs are powered on!!!"
-sleep 10
+sleep 15
 ####### Start ping sequence and echo results
 echo "We are now going to check if all the boards are up and reachable"
 is_alive_ping()
