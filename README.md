@@ -192,7 +192,7 @@ Now your screen should look like this:
 The changes must be saved to be put into effect. We do this by pressing Ctrl+x, then type Y and press enter. After that the window automatically closes. Now you are back in the terminal and we must reboot. To do so copy paste the following into your terminal:
 
 ```
-reboot now
+sudo reboot now
 ```
 
 The preconfiguration of the OrangePI 1 is finished at this point.
