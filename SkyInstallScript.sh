@@ -82,6 +82,7 @@ sudo mv go /usr/local
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
 
 ###### Reload the paths
+sleep 5
 . ~/.profile
 
 ###### Create GO directories
@@ -106,8 +107,8 @@ echo 'export GOROOT=/usr/local/go' >> ~/.bashrc
 echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
-
 ###### Reload GO paths
+sleep 5
 . ~/.bashrc
 echo "GO succesfully installed!"
  
