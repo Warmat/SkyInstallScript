@@ -83,7 +83,7 @@ echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
 
 ###### Reload the paths
 sleep 5
-. ~/.profile
+source ~/.profile
 
 ###### Create GO directories
 mkdir -p $HOME/go
@@ -109,7 +109,7 @@ echo 'export GOBIN=$GOPATH/bin' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOBIN' >> ~/.bashrc
 ###### Reload GO paths
 sleep 5
-. ~/.bashrc
+source ~/.bashrc
 echo "GO succesfully installed!"
  
 
